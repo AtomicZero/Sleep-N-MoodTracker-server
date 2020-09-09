@@ -1,0 +1,42 @@
+{
+  "name": "js-boilerplate-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "babel:build": "babel src --out-dir dist",
+    "build": "npm run clean && npm run babel:build",
+    "clean": "rm -rf dist",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "start": "npm run build && node dist/index.js",
+    "start:dev": "nodemon -e js --watch src --exec \"npm run start\""
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surajverma2587/node-js-boilerplate-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surajverma2587/node-js-boilerplate-server/issues"
+  },
+  "homepage": "https://github.com/surajverma2587/node-js-boilerplate-server#readme",
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "husky": "^4.3.0",
+    "nodemon": "^2.0.4"
+  }
+}
