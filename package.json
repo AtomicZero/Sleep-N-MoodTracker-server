@@ -10,7 +10,8 @@
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "start": "npm run build && node dist/index.js",
-    "start:dev": "nodemon -e js --watch src --exec \"npm run start\""
+    "start:dev": "nodemon -e js --watch src --exec \"npm run start\"",
+    "seed": "npm run build && node dist/scripts/seed.js"
   },
   "repository": {
     "type": "git",
