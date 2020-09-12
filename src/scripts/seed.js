@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-import models from '../models/sleepMood';
+import models from '../models';
 import { DB_URI, MONGOOSE_OPTIONS } from '../config';
 import sleepMoods from '../data/sleep-n-mood-seed';
 
