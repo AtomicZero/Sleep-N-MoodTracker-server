@@ -4,8 +4,12 @@ const { Schema } = mongoose;
 
 const schema = new Schema({
   // is USER input
-  weekID: {
-    type: Date,
+  // weekID: {
+  //   type: Date,
+  //   required: true,
+  // },
+  title: {
+    type: String,
     required: true,
   },
   day: {
