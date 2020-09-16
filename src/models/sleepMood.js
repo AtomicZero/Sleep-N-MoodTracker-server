@@ -3,12 +3,14 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const schema = new Schema({
+  // is USER input
   weekID: {
-    type: Number,
+    type: Date,
     required: true,
   },
   day: {
     type: String,
+    enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     required: true,
   },
   date: {
@@ -19,17 +21,30 @@ const schema = new Schema({
     type: Number,
     required: true,
   },
-  mood: [
-    String,
-  ],
-  average: {
+  mood: {
+    type: String,
+    enum: ['cranky', 'tired', 'meh', 'okay', 'energized'],
+    required: true,
+  },
+  sleepGoal: {
     type: Number,
+    required: true,
+  },
+  // is Calulation
+  sleepHoursAverage: {
+    type: Number,
+    required: true,
+  },
+  moodAverage: {
+    type: String,
+    required: true,
   },
   weekCompleted: {
     type: Boolean,
   },
-  sleepGoal: {
-    type: Number,
+  // is unseen system track
+  logDate: {
+    type: Date,
     required: true,
   },
 });
