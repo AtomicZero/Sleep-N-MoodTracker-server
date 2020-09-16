@@ -7,3 +7,5 @@ export const MONGOOSE_OPTIONS = {
   useCreateIndex: true,
   useNewUrlParser: true,
 };
+
+export const AUTH_SECRET = process.env.AUTH_SECRET || 'test-secret';
