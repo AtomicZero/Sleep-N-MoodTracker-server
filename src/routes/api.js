@@ -4,28 +4,25 @@ import models from '../models';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('Hello');
-});
-
-const getAllsleepMoods = async (_, res) => {
+const getAllSleepMoods = async (req, res) => {
+  console.log(req.user);
   const sleepMoods = await models.sleepMood.find({});
   res.json({ sleepMoods });
 };
 
 const getWeekByID = async (req, res) => {
   const { weekID } = req.params;
-  const sleepMood = await models.sleepMood.findById(weekID);
-  res.json({ sleepMood });
+  const sleepMoodWeek = await models.sleepMood.findById(weekID);
+  res.json({ sleepMoodWeek });
 };
 
 const getDate = async (req, res) => {
   const { Date } = req.params;
-  const sleepMood = await models.sleepMood.findOne({ Date });
-  res.json({ sleepMood });
+  const sleepMoodDate = await models.sleepMood.findOne({ Date });
+  res.json({ sleepMoodDate });
 };
 
-router.get('/sleepMoods', getAllsleepMoods);
+router.get('/sleepMoods', getAllSleepMoods);
 router.get('/date', getDate);
 router.get('/week/:id', getWeekByID);
 
