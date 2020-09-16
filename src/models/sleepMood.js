@@ -49,6 +49,6 @@ const schema = new Schema({
   },
 });
 
-const sleepMood = mongoose.model('SleepMood', schema);
+const sleepMood = mongoose.model('sleepMood', schema);
 
 export default sleepMood;
