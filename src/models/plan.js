@@ -24,14 +24,19 @@ const schema = new Schema({
   },
   status: {
     type: String,
+    enum: ['INCOMPLETE', 'COMPLETE'],
     required: true,
+    default: 'INCOMPLETE',
   },
   // Links log schema to Plan
   logs: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Log',
-    }],
+    },
+  ],
 });
-const plan = mongoose.model('plan', schema);
+
+const plan = mongoose.model('Plan', schema);
+
 export default plan;

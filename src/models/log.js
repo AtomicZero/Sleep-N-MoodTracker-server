@@ -23,22 +23,13 @@ const schema = new Schema({
     required: true,
   },
   // Things that get auto-generated when request is made on the server
-  logDate: {
+  createdAt: {
     type: Date,
+    default: Date.now,
     required: true,
   },
-  // is Calulation
-  // sleepHoursTotal: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // moodAverage: {
-  //   type: String,
-  //   required: true,
-  // },
-  weekCompleted: {
-    type: Boolean,
-  },
 });
-const log = mongoose.model('log', schema);
+
+const log = mongoose.model('Log', schema);
+
 export default log;

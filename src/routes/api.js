@@ -26,4 +26,7 @@ router.get('/sleepMoods', getAllSleepMoods);
 router.get('/date', getDate);
 router.get('/week/:id', getWeekByID);
 
+// GET Route for /plans (use populate true config here to get associated logs)
+// GET Route for /plans/:id (use populate true config here to get associated logs)
+
 export default router;

@@ -11,7 +11,8 @@
     "lint:fix": "eslint src --fix",
     "start": "npm run build && node dist/index.js",
     "start:dev": "nodemon -e js --watch src --exec \"npm run start\"",
-    "seed": "npm run build && node dist/scripts/seed.js"
+    "seed:logs": "npm run build && node dist/scripts/logs.js",
+    "seed:plans": "npm run build && node dist/scripts/plans.js"
   },
   "repository": {
     "type": "git",

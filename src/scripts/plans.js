@@ -2,12 +2,12 @@ import mongoose from 'mongoose';
 
 import models from '../models';
 import { DB_URI, MONGOOSE_OPTIONS } from '../config';
-import sleepMoods from '../data/sleep-n-mood-seed';
+import plans from '../data/plans';
 
 mongoose.connect(DB_URI, MONGOOSE_OPTIONS);
 
-models.sleepMood.deleteMany({})
-  .then(() => models.sleepMood.collection.insertMany(sleepMoods))
+models.plan.deleteMany({})
+  .then(() => models.plan.collection.insertMany(plans))
   .then((data) => {
     console.log(`${data.result.n} records inserted!`);
     process.exit(0);
