@@ -1,7 +1,9 @@
-import sleepMood from './sleepMood';
+import plan from './plan';
+import log from './log';
 import user from './user';
 
 export default {
-  sleepMood,
+  plan,
+  log,
   user,
 };

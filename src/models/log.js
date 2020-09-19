@@ -3,15 +3,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const schema = new Schema({
-  // is USER input
-  // weekID: {
-  //   type: Date,
-  //   required: true,
-  // },
-  title: {
-    type: String,
-    required: true,
-  },
+  // Things a user will have to input on the client when creating a log
   day: {
     type: String,
     enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -21,7 +13,7 @@ const schema = new Schema({
     type: Date,
     required: true,
   },
-  hours: {
+  actualSleepHours: {
     type: Number,
     required: true,
   },
@@ -30,29 +22,23 @@ const schema = new Schema({
     enum: ['cranky', 'tired', 'meh', 'okay', 'energized'],
     required: true,
   },
-  sleepGoal: {
-    type: Number,
-    required: true,
-  },
-  // is Calulation
-  sleepHoursAverage: {
-    type: Number,
-    required: true,
-  },
-  moodAverage: {
-    type: String,
-    required: true,
-  },
-  weekCompleted: {
-    type: Boolean,
-  },
-  // is unseen system track
+  // Things that get auto-generated when request is made on the server
   logDate: {
     type: Date,
     required: true,
   },
+  // is Calulation
+  // sleepHoursTotal: {
+  //   type: Number,
+  //   required: true,
+  // },
+  // moodAverage: {
+  //   type: String,
+  //   required: true,
+  // },
+  weekCompleted: {
+    type: Boolean,
+  },
 });
-
-const sleepMood = mongoose.model('sleepMood', schema);
-
-export default sleepMood;
+const log = mongoose.model('log', schema);
+export default log;
