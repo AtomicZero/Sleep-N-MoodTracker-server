@@ -1,45 +1,43 @@
 import mongoose from 'mongoose';
 
-const monId1 = mongoose.Types.ObjectId('5f65d6d23cd12381bb3bfb1c');
-const tueId1 = mongoose.Types.ObjectId('5f65d6d23cd12381bb3bfb1d');
-const wedId1 = mongoose.Types.ObjectId('5f65d6d23cd12381bb3bfb1e');
-const thuId1 = mongoose.Types.ObjectId('5f65d6d23cd12381bb3bfb1f');
-const friId1 = mongoose.Types.ObjectId('5f65d6d23cd12381bb3bfb20');
-const satId1 = mongoose.Types.ObjectId('5f65d6d23cd12381bb3bfb21');
-const sunId1 = mongoose.Types.ObjectId('5f65d6d23cd12381bb3bfb22');
+const plan1Logs = [
+  mongoose.Types.ObjectId('5f67b8ff427316cd6547645e'),
+  mongoose.Types.ObjectId('5f67b8ff427316cd6547645f'),
+  mongoose.Types.ObjectId('5f67b8ff427316cd65476460'),
+  mongoose.Types.ObjectId('5f67b8ff427316cd65476461'),
+  mongoose.Types.ObjectId('5f67b8ff427316cd65476462'),
+  mongoose.Types.ObjectId('5f67b8ff427316cd65476463'),
+  mongoose.Types.ObjectId('5f67b8ff427316cd65476464'),
+];
 
-const monId2 = mongoose.Types.ObjectId('5f65d6d23cd12381bb3bfb23');
-const tueId2 = mongoose.Types.ObjectId('5f65d6d23cd12381bb3bfb24');
-const wedId2 = mongoose.Types.ObjectId('5f65d6d23cd12381bb3bfb25');
+const plan2Logs = [
+  mongoose.Types.ObjectId('5f67b8ff427316cd65476465'),
+  mongoose.Types.ObjectId('5f67b8ff427316cd65476466'),
+  mongoose.Types.ObjectId('5f67b8ff427316cd65476467'),
+  mongoose.Types.ObjectId('5f67b8ff427316cd65476468'),
+  mongoose.Types.ObjectId('5f67b8ff427316cd65476469'),
+  mongoose.Types.ObjectId('5f67b8ff427316cd6547646a'),
+  mongoose.Types.ObjectId('5f67b8ff427316cd6547646b'),
+];
 
 const plans = [
   {
     title: 'Plan 1',
     desiredHours: 40,
-    weekCommencing: new Date(),
+    weekCommencing: new Date('2020-09-07T00:00:00'),
     status: 'COMPLETE',
-    createdAt: new Date(),
-    logs: [
-      monId1,
-      tueId1,
-      wedId1,
-      thuId1,
-      friId1,
-      satId1,
-      sunId1,
-    ],
+    createdAt: new Date('2020-09-07T00:00:00'),
+    logs: plan1Logs,
+    userId: '5f62310c7a118504f889ab7b',
   },
   {
     title: 'Plan 2',
     desiredHours: 30,
-    weekCommencing: new Date(),
-    status: 'INCOMPLETE',
-    createdAt: new Date(),
-    logs: [
-      monId2,
-      tueId2,
-      wedId2,
-    ],
+    weekCommencing: new Date('2020-09-14T00:00:00'),
+    status: 'COMPLETE',
+    createdAt: new Date('2020-09-14T00:00:00'),
+    logs: plan2Logs,
+    userId: '5f624fb6d92740325b38a562',
   },
 ];
 

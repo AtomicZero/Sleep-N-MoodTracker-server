@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const schema = new Schema({
-  // Things a user will have to input on the client when creating a plan
   title: {
     type: String,
     required: true,
@@ -16,7 +15,6 @@ const schema = new Schema({
     type: Date,
     required: true,
   },
-  // Things that get auto-generated when request is made on the server
   createdAt: {
     type: Date,
     default: Date.now,
@@ -28,13 +26,16 @@ const schema = new Schema({
     required: true,
     default: 'INCOMPLETE',
   },
-  // Links log schema to Plan
   logs: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Log',
     },
   ],
+  userId: {
+    type: String,
+    required: true,
+  },
 });
 
 const plan = mongoose.model('Plan', schema);
