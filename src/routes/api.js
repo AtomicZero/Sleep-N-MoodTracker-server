@@ -17,7 +17,23 @@ const getPlan = async (req, res) => {
   res.json({ results });
 };
 
+const getLogs = async (req, res) => {
+  const { id: userId } = req.user;
+  const results = await models.log.find({ userId });
+  res.json({ results });
+};
+
+const getLog = async (req, res) => {
+  const { id: userId } = req.user;
+  const { id: logId } = req.params;
+  const results = await models.log.find({ _id: logId, userId });
+  res.json({ results });
+};
+
 router.get('/plans', getPlans);
 router.get('/plans/:id', getPlan);
+
+router.get('/logs', getLogs);
+router.get('/logs/:id', getLog);
 
 export default router;
