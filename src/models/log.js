@@ -26,6 +26,10 @@ const schema = new Schema({
     default: Date.now,
     required: true,
   },
+  userId: {
+    type: String,
+    required: true,
+  },
 });
 
 const log = mongoose.model('Log', schema);

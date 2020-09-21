@@ -1,3 +1,6 @@
+// Replace with user ID on your ROBO 3T
+const userId = '5f67b8ff427316cd65476460';
+
 const logs = [
   {
     day: 'Monday',
@@ -5,6 +8,7 @@ const logs = [
     actualSleepHours: 10,
     mood: 'energized',
     createdAt: new Date('2020-09-07T00:00:00'),
+    userId,
   },
   {
     day: 'Tuesday',
@@ -12,6 +16,7 @@ const logs = [
     actualSleepHours: 5,
     mood: 'tired',
     createdAt: new Date('2020-09-08T00:00:00'),
+    userId,
   },
   {
     day: 'Wednesday',
@@ -19,6 +24,7 @@ const logs = [
     actualSleepHours: 6,
     mood: 'energized',
     createdAt: new Date('2020-09-09T00:00:00'),
+    userId,
   },
   {
     day: 'Thursday',
@@ -26,6 +32,7 @@ const logs = [
     actualSleepHours: 7,
     mood: 'cranky',
     createdAt: new Date('2020-09-10T00:00:00'),
+    userId,
   },
   {
     day: 'Friday',
@@ -33,6 +40,7 @@ const logs = [
     actualSleepHours: 8,
     mood: 'tired',
     createdAt: new Date('2020-09-11T00:00:00'),
+    userId,
   },
   {
     day: 'Saturday',
@@ -40,6 +48,7 @@ const logs = [
     actualSleepHours: 3,
     mood: 'okay',
     createdAt: new Date('2020-09-12T00:00:00'),
+    userId,
   },
   {
     day: 'Sunday',
@@ -47,6 +56,7 @@ const logs = [
     actualSleepHours: 5,
     mood: 'meh',
     createdAt: new Date('2020-09-13T00:00:00'),
+    userId,
   },
   {
     day: 'Monday',
@@ -54,6 +64,7 @@ const logs = [
     actualSleepHours: 7,
     mood: 'cranky',
     createdAt: new Date('2020-09-14T00:00:00'),
+    userId,
   },
   {
     day: 'Tuesday',
@@ -61,6 +72,7 @@ const logs = [
     actualSleepHours: 7,
     mood: 'meh',
     createdAt: new Date('2020-09-15T00:00:00'),
+    userId,
   },
   {
     day: 'Wednesday',
@@ -68,6 +80,7 @@ const logs = [
     actualSleepHours: 5,
     mood: 'energized',
     createdAt: new Date('2020-09-16T00:00:00'),
+    userId,
   },
   {
     day: 'Thursday',
@@ -75,6 +88,7 @@ const logs = [
     actualSleepHours: 3,
     mood: 'cranky',
     createdAt: new Date('2020-09-16T00:00:00'),
+    userId,
   },
   {
     day: 'Friday',
@@ -82,6 +96,7 @@ const logs = [
     actualSleepHours: 4,
     mood: 'meh',
     createdAt: new Date('2020-09-18T00:00:00'),
+    userId,
   },
   {
     day: 'Saturday',
@@ -89,6 +104,7 @@ const logs = [
     actualSleepHours: 6,
     mood: 'tired',
     createdAt: new Date('2020-09-19T00:00:00'),
+    userId,
   },
   {
     day: 'Sunday',
@@ -96,6 +112,7 @@ const logs = [
     actualSleepHours: 7,
     mood: 'energized',
     createdAt: new Date('2020-09-20T00:00:00'),
+    userId,
   },
 ];
 

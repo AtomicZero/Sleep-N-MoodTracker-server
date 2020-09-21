@@ -1,5 +1,9 @@
 import mongoose from 'mongoose';
 
+// Replace with user ID on your ROBO 3T
+const userId = '5f67b8ff427316cd65476460';
+
+// Replace log ids with your log IDs on ROBO3T
 const plan1Logs = [
   mongoose.Types.ObjectId('5f67b8ff427316cd6547645e'),
   mongoose.Types.ObjectId('5f67b8ff427316cd6547645f'),
@@ -10,6 +14,7 @@ const plan1Logs = [
   mongoose.Types.ObjectId('5f67b8ff427316cd65476464'),
 ];
 
+// Replace log ids with your log IDs on ROBO3T
 const plan2Logs = [
   mongoose.Types.ObjectId('5f67b8ff427316cd65476465'),
   mongoose.Types.ObjectId('5f67b8ff427316cd65476466'),
@@ -28,7 +33,7 @@ const plans = [
     status: 'COMPLETE',
     createdAt: new Date('2020-09-07T00:00:00'),
     logs: plan1Logs,
-    userId: '5f62310c7a118504f889ab7b',
+    userId,
   },
   {
     title: 'Plan 2',
@@ -37,7 +42,7 @@ const plans = [
     status: 'COMPLETE',
     createdAt: new Date('2020-09-14T00:00:00'),
     logs: plan2Logs,
-    userId: '5f624fb6d92740325b38a562',
+    userId,
   },
 ];
 
