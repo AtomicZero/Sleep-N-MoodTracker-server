@@ -1,28 +1,28 @@
 import mongoose from 'mongoose';
 
 // Replace with user ID on your ROBO 3T
-const userId = '5f67b8ff427316cd65476460';
+const userId = '5f68ec7922569324ecf0eade';
 
 // Replace log ids with your log IDs on ROBO3T
 const plan1Logs = [
-  mongoose.Types.ObjectId('5f67b8ff427316cd6547645e'),
-  mongoose.Types.ObjectId('5f67b8ff427316cd6547645f'),
-  mongoose.Types.ObjectId('5f67b8ff427316cd65476460'),
-  mongoose.Types.ObjectId('5f67b8ff427316cd65476461'),
-  mongoose.Types.ObjectId('5f67b8ff427316cd65476462'),
-  mongoose.Types.ObjectId('5f67b8ff427316cd65476463'),
-  mongoose.Types.ObjectId('5f67b8ff427316cd65476464'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb46'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb47'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb48'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb49'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb4a'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb4b'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb4c'),
 ];
 
 // Replace log ids with your log IDs on ROBO3T
 const plan2Logs = [
-  mongoose.Types.ObjectId('5f67b8ff427316cd65476465'),
-  mongoose.Types.ObjectId('5f67b8ff427316cd65476466'),
-  mongoose.Types.ObjectId('5f67b8ff427316cd65476467'),
-  mongoose.Types.ObjectId('5f67b8ff427316cd65476468'),
-  mongoose.Types.ObjectId('5f67b8ff427316cd65476469'),
-  mongoose.Types.ObjectId('5f67b8ff427316cd6547646a'),
-  mongoose.Types.ObjectId('5f67b8ff427316cd6547646b'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb4d'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb4e'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb4f'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb50'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb51'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb52'),
+  mongoose.Types.ObjectId('5f68ece52871133318cbfb53'),
 ];
 
 const plans = [
