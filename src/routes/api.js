@@ -18,7 +18,7 @@ const getPlan = async (req, res) => {
   try {
     const { id: userId } = req.user;
     const { id: planId } = req.params;
-    const results = await models.plan.find({ _id: planId, userId }).populate('logs');
+    const results = await models.plan.findOne({ _id: planId, userId }).populate('logs');
     res.json({ results });
   } catch (error) {
     res.status(500).send({ error: error.message });
