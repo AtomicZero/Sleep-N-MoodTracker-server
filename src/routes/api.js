@@ -1,4 +1,5 @@
 import express from 'express';
+import moment from 'moment';
 
 import models from '../models';
 
@@ -18,8 +19,16 @@ const getPlan = async (req, res) => {
   try {
     const { id: userId } = req.user;
     const { id: planId } = req.params;
-    const results = await models.plan.findOne({ _id: planId, userId }).populate('logs');
-    res.json({ results });
+    const plan = await models.plan.findOne({ _id: planId, userId }).populate('logs');
+
+    const data = plan.toJSON();
+
+    res.json({
+      results: {
+        ...data,
+        logs: data.logs.sort((a, b) => b.date - a.date),
+      },
+    });
   } catch (error) {
     res.status(500).send({ error: error.message });
   }
@@ -71,8 +80,10 @@ const createLogForPlan = async (req, res) => {
     const { id: planId } = req.params;
     const { id: userId } = req.user;
     const {
-      day, date, actualSleepHours, mood,
+      date, actualSleepHours, mood,
     } = req.body;
+
+    const day = moment(date).format('dddd');
 
     const log = {
       day,
@@ -97,12 +108,31 @@ const createLogForPlan = async (req, res) => {
   }
 };
 
+const updateLog = async (req, res) => {
+  try {
+    const { id: logId } = req.params;
+    const {
+      date, actualSleepHours, mood,
+    } = req.body;
+
+    const day = moment(date).format('dddd');
+
+    const data = await models.log.findByIdAndUpdate(logId, {
+      day, date, actualSleepHours, mood,
+    }, { new: true });
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+};
+
 router.get('/plans', getPlans);
 router.get('/plans/:id', getPlan);
 router.post('/plans', createPlan);
 
 router.get('/logs', getLogs);
 router.get('/logs/:id', getLog);
+router.put('/logs/:id', updateLog);
 router.post('/plans/:id/logs', createLogForPlan);
 
 export default router;
