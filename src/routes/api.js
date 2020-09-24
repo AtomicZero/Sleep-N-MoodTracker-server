@@ -26,7 +26,7 @@ const getPlan = async (req, res) => {
     res.json({
       results: {
         ...data,
-        logs: data.logs.sort((a, b) => b.date - a.date),
+        logs: data.logs.sort((a, b) => a.date - b.date),
       },
     });
   } catch (error) {
@@ -126,6 +126,22 @@ const updateLog = async (req, res) => {
   }
 };
 
+const deleteLogForPlan = async (req, res) => {
+  try {
+    const { planId, logId } = req.params;
+
+    await models.log.findByIdAndDelete(logId);
+
+    const plan = await models.plan.findById(planId);
+    plan.logs = plan.logs.filter((each) => each._id !== logId);
+    const newPlan = await plan.save();
+    const data = await models.plan.populate(newPlan, 'logs');
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+};
+
 router.get('/plans', getPlans);
 router.get('/plans/:id', getPlan);
 router.post('/plans', createPlan);
@@ -134,5 +150,6 @@ router.get('/logs', getLogs);
 router.get('/logs/:id', getLog);
 router.put('/logs/:id', updateLog);
 router.post('/plans/:id/logs', createLogForPlan);
+router.delete('/plans/:planId/logs/:logId', deleteLogForPlan);
 
 export default router;
