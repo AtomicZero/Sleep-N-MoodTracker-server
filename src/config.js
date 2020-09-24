@@ -6,6 +6,7 @@ export const MONGOOSE_OPTIONS = {
   useUnifiedTopology: true,
   useCreateIndex: true,
   useNewUrlParser: true,
+  useFindAndModify: true,
 };
 
 export const AUTH_SECRET = process.env.AUTH_SECRET || 'test-secret';
