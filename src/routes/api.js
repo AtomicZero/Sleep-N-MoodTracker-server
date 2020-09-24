@@ -1,4 +1,5 @@
 import express from 'express';
+import logs from '../data/logs';
 
 import models from '../models';
 
@@ -66,11 +67,43 @@ const createPlan = async (req, res) => {
   }
 };
 
+const createLogForPlan = async (req, res) => {
+  try {
+    const { id: planId } = req.params;
+    const { id: userId } = req.user;
+    const {
+      day, date, actualSleepHours, mood,
+    } = req.body;
+
+    const log = {
+      day,
+      date,
+      actualSleepHours,
+      mood,
+      createdAt: new Date(),
+      userId,
+    };
+
+    const newLog = await models.log.create(log);
+
+    const { _id: logId } = newLog;
+    const plan = await models.plan.findById(planId);
+    plan.logs.push(logId);
+    const newPlan = await plan.save();
+    const data = await models.plan.populate(newPlan, 'logs');
+
+    res.status(201).json(data);
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+};
+
 router.get('/plans', getPlans);
 router.get('/plans/:id', getPlan);
 router.post('/plans', createPlan);
 
 router.get('/logs', getLogs);
 router.get('/logs/:id', getLog);
+router.post('/plans/:id/logs', createLogForPlan);
 
 export default router;
