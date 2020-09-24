@@ -1,5 +1,4 @@
 import express from 'express';
-import logs from '../data/logs';
 
 import models from '../models';
 
