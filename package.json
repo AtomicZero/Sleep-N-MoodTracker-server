@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/surajverma2587/node-js-boilerplate-server.git"
+    "url": "git+https://github.com/AtomicZero/node-js-boilerplate-server.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/surajverma2587/node-js-boilerplate-server/issues"
+    "url": "https://github.com/AtomicZero/node-js-boilerplate-server/issues"
   },
-  "homepage": "https://github.com/surajverma2587/node-js-boilerplate-server#readme",
+  "homepage": "https://github.com/AtomicZero/node-js-boilerplate-server#readme",
   "husky": {
     "hooks": {
       "pre-push": "npm run lint"
